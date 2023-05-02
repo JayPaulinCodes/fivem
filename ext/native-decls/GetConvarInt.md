@@ -18,6 +18,13 @@ if GetConvarInt('remainingRounds', 0) < 900 then
 end
 ```
 
+```cs
+if (GetConvarInt("remainingRounds", 0) == 0) 
+{
+    Debug.WriteLine("Out of rounds!");
+}
+```
+
 ## Parameters
 * **varName**: The console variable to look up.
 * **default_**: The default value to set if none is found (variable not set using [SET_CONVAR](#_0x341B16D2), or not accessible).
