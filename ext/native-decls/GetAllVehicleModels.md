@@ -30,3 +30,19 @@ RegisterCommand("spawnrandomcar", function()
 	SetPedIntoVehicle(PlayerPedId(), veh, -1)
 end)
 ```
+
+```cs
+[Command("spawnrandomcar")]
+internal void OnCommandSpawnRandomCar(int src, List<object> args, string raw) 
+{
+	dymanic vehicles = GetAllVehicleModels();
+	Random random = new Random();
+	dynamic vehicle = vehicles[random.Next(0, vehicles.Length)];
+
+	RequestModel((uint)GetHashKey(vehicle));
+	while (!HasModelLoaded((uint)GetHashKey(vehicle))) { await Delay(100); }
+
+	CreateVehicle((uint)GetHashKey(vehicle), Game.PlayerPed.Position, Game.PlayerPed.Heading, true, false)
+}
+```
+
