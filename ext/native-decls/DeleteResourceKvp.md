@@ -15,3 +15,7 @@ void DELETE_RESOURCE_KVP(char* key);
 ```lua
 DeleteResourceKvp('liberty_city')
 ```
+
+```cs
+DeleteResourceKvp("liberty_city")
+```
