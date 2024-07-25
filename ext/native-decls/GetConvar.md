@@ -17,6 +17,13 @@ if GetConvar('voice_useNativeAudio', 'false') == 'true' then
 end
 ```
 
+```cs
+if (GetConvar("enable_debug", "false") == "true") 
+{
+    Debug.WriteLine("Debug mode is on!");
+}
+```
+
 ## Parameters
 * **varName**: The console variable to look up.
 * **default_**: The default value to set if none is found.
